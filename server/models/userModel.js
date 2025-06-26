@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+// models/userModel.js
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   clerlId: { type: String, required: true, unique: true },
@@ -9,7 +10,6 @@ const userSchema = new mongoose.Schema({
   creditBalance: { type: Number, default: 5 }
 });
 
-// 🔁 Capitalize the model name (convention: PascalCase)
 const UserModel = mongoose.models.User || mongoose.model('User', userSchema);
 
 export default UserModel;
